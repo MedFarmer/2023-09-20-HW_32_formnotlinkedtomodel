@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %} home {% endblock %}
+{% block content %} 
+    <ul>
+    {% for student in students %}
+        <li> {{ student.name }} {{ student.lastname }} {{ student.gpa }} {{ student.nationality }}  </li>
+    {% endfor %}
+    </ul>
+    
+{% endblock %}

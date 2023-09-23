@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul style="list-style: none; display: flex; justify-content: space-between; align-items: center;">
+            <a href="{% url 'home' %}">
+                <li>Home</li>
+            </a>
+            <a href="{% url 'createstudent' %}">
+                <li>Add student</li>
+            </a>
+            <a href="{% url 'createnationality' %}">
+                <li>Add nationality</li>
+            </a>            
+        </ul>
+    </nav>
+    <div>         
+        <form method="post">
+            {% csrf_token %}
+            {{ search_form }}
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
